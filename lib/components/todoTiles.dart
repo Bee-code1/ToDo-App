@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TodoTile extends StatelessWidget {
   final String taskname;
@@ -18,7 +19,7 @@ class TodoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0, right: 25, top: 25),
+      padding:  EdgeInsets.only(left: 25.r, right: 25.r, top: 25.r),
       child: Slidable(
         endActionPane: ActionPane(
           motion: StretchMotion(),
@@ -27,15 +28,15 @@ class TodoTile extends StatelessWidget {
               onPressed: deleteFunction,
               icon: Icons.delete,
               backgroundColor: Colors.red.shade300,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(12.r),
             )
           ],
         ),
         child: Container(
-          padding: EdgeInsets.all(24),
+          padding: EdgeInsets.all(24.r),
           decoration: BoxDecoration(
             color: Colors.deepPurple[500],
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
           ),
           child: Row(
             children: [
@@ -53,6 +54,7 @@ class TodoTile extends StatelessWidget {
                   decoration: taskCompleted
                       ? TextDecoration.lineThrough
                       : TextDecoration.none,
+                  fontSize: 20.r
                 ),
               ),
             ],

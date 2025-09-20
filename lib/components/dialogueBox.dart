@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'buttons.dart';
 
 class DialogBox extends StatelessWidget {
@@ -19,7 +19,7 @@ class DialogBox extends StatelessWidget {
     return AlertDialog(
       backgroundColor: Colors.deepPurple[300],
       content: Container(
-        height: 120,
+        height: 120.r,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -39,7 +39,7 @@ class DialogBox extends StatelessWidget {
                 // save button
                 AlertButton(text: "Save", onPressed: onSave),
 
-                const SizedBox(width: 8),
+                 SizedBox(width: 8.r),
 
                 // cancel button
                 AlertButton(text: "Cancel", onPressed: onCancel),

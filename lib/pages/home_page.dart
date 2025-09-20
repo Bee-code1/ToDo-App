@@ -3,6 +3,7 @@ import 'package:hive/hive.dart';
 import 'package:notesapp/Data/database.dart';
 import 'package:notesapp/components/dialogueBox.dart';
 import 'package:notesapp/components/todoTiles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   
@@ -70,7 +71,11 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.deepPurple[300],
       appBar: AppBar(
         elevation: 0,
-        title: Center(child: Text(' TO DO ')),
+        toolbarHeight: 60.r, 
+        title: Center(child: Padding(
+          padding:  EdgeInsets.all(8.r),
+          child: Text(' TO DO ',style: TextStyle(fontSize: 20.r,fontWeight: FontWeight.bold),),
+        )),
       ),
       body: ListView.builder(
         itemCount: db.todolists.length,
@@ -83,14 +88,20 @@ class _HomePageState extends State<HomePage> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: DisplayDial,
-        backgroundColor: Colors.deepPurple[500],
-        child: Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
+     floatingActionButton : SizedBox(
+  width: 60.r,   // responsive width
+  height: 60.r,  // make it square using width
+  child: FloatingActionButton(
+    onPressed: DisplayDial,
+    backgroundColor: Colors.deepPurple[500],
+    child: Icon(
+      Icons.add,
+      color: Colors.white,
+      size: 25.r,  // responsive icon size
+    ),
+  ),
+),
+
     );
   }
 }
